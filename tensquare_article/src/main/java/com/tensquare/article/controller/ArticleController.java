@@ -48,12 +48,6 @@ public class ArticleController {
 	 * @param id ID
 	 * @return
 	 */
-//	@RequestMapping(value="/{id}",method= RequestMethod.GET)
-//	public Result findById(@PathVariable String id){
-//		return new Result(true,StatusCode.OK,"查询成功",articleService.findById(id));
-//	}
-
-
 	@GetMapping("{articleId}")
 	public Result findById(@PathVariable String articleId){
 		return new Result(true,StatusCode.OK,"findByID",articleService.findById(articleId));
