@@ -1,0 +1,22 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: tensquare-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    tensquare-article:
+      path: /article/**
+      serverId: tensquare-article
+    tensquare-base:
+      path: /base/**
+      serverId: tensquare-base
+    tensquare-spit:
+      path: /spit/**
+      serverId: tensquare-spit
